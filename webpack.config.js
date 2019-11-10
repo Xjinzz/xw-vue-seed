@@ -5,9 +5,10 @@ const _mode = argv.mode || 'development';
 const _mergeConfig = require(`./config/webpack.${_mode}`);
 const merge = require('webpack-merge');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const webpack = require('webpack');
 
 let webpackConfig = {
-    entry: './src/main.js',
+    entry: ['./src/main.js'],
     output: {
         path: path.resolve(__dirname, './dist'),//输出结果
         filename: 'scripts/[name].js',
@@ -45,6 +46,9 @@ let webpackConfig = {
         //     from: './src/static',
         //     to: 'static'
         // }]),
+        new webpack.ProvidePlugin({
+            "_global_object": [path.resolve(__dirname, "./src/static/js/event.js"), 'default']
+        }),
         new HtmlWebpackPlugin(
             {
                 filename:"./index.html",

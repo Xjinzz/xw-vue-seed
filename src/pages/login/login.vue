@@ -25,6 +25,7 @@ const { mapState, mapActions,mapMutations } = createNamespacedHelpers('login_sto
             ...mapActions(["doLogin"]),
             cancel(){},
             login(){
+                console.log(_global_object);
                 this.$refs.loginForm.validate().then(x=>{
                     this.doLogin(()=>{
                         this.alert.showAlert("success","Login Success");

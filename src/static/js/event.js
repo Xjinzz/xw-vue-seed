@@ -29,3 +29,8 @@ let _idSeed = {
         return _idSeed.id--;
     }
 }
+
+export default {
+    _eventPublisher:_eventPublisher,
+    _idSeed:_idSeed,
+}
