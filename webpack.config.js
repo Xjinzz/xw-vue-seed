@@ -10,8 +10,8 @@ let webpackConfig = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),//输出结果
-        filename: '[name].js',
-        chunkFilename: '[id].chunk.js'
+        filename: 'scripts/[name].js',
+        chunkFilename: 'scripts/[id].chunk.js'
     },
     module: {
         rules: [
@@ -20,8 +20,10 @@ let webpackConfig = {
                 loader: 'vue-loader',
                 options: {
                     loaders: {
-                    }
-                }
+                    },
+                    presets: ['es2015'],
+                    plugins: ['transform-runtime', 'transform-object-rest-spread']
+                },
             },
             {
                 test: /\.js$/,
@@ -35,18 +37,6 @@ let webpackConfig = {
                     name: '[name].[ext]?[hash]'
                 }
             },
-            {
-                test: /\.css$/,
-                loader: "style-loader!css-loader",
-                exclude: /node_modules/
-            },
-            // {
-            //     test: /\.html$/,
-            //     loader: 'html-loader',
-            //     options: {
-            //         minimize: false
-            //     }
-            // }
         ]
     },
     plugins: [

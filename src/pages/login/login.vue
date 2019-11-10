@@ -5,7 +5,7 @@
             <le-input v-model="entity.username" lable="username"></le-input>
             <le-input v-model="entity.password" lable="password"></le-input>    
             <le-button type="submit" value="Login" @click="login"></le-button>
-            <le-button type="cancel" value="Cancel" @click="close"></le-button>       
+            <le-button type="cancel" value="Cancel" @click="cancel"></le-button>       
         </le-form>
     </div>
 </template>
@@ -23,6 +23,7 @@ const { mapState, mapActions,mapMutations } = createNamespacedHelpers('login_sto
         },
         methods:{
             ...mapActions(["doLogin"]),
+            cancel(){},
             login(){
                 this.$refs.loginForm.validate().then(x=>{
                     this.doLogin(()=>{
