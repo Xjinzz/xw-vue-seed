@@ -1,2 +1,2 @@
 # vue-seed
-vue-seed
+vue-seed s
