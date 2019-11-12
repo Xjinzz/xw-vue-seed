@@ -422,7 +422,6 @@ let CommonUtil = {
         }
     },
     getVueInstance(){
-        debugger
         return Vue.prototype;
     }
 }
