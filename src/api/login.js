@@ -1,6 +1,7 @@
 
 let login_url = "/login";
 let logOut_url = "/logout";
+import Vue from "vue";
 
 import util from "@util";
 let _vue_instance = util.getVueInstance();
