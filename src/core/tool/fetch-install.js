@@ -41,7 +41,7 @@ let param = function(obj) {
 export default {
     install:function(Vue){
         Vue.prototype.ajax = {
-            getFetch:function(url){
+            getFetch:function(url,showLoading){
                 if(!url){
                     return;
                 }
@@ -74,7 +74,7 @@ export default {
                 });
                 return defer.promise;
             },
-            postFetch:function(url,data){
+            postFetch:function(url,data,showLoading){
                 if(!url){
                     return;
                 }

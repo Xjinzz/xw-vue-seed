@@ -1,14 +1,12 @@
 
-
-
 <template>
     <div class='demoPage clearfix' tag="demoPage">
-		<top></top>	
-		<left></left>
+		<Top></Top>	
+		<Left></Left>
 		<!--主内容-->
 		<div id='page-wrapper' class='page-wrapper'>
 			<div id='contentBox' class='contentBox'>
-				
+				<router-view></router-view>
 			</div>
 		</div>
 	</div>

@@ -27,7 +27,7 @@ module.exports = {
     },
     devServer: {
         inline: true, //检测文件变化，实时构建并刷新浏览器
-        port: "9991",
+        port: "9988",
         proxy: {
             '/api': {
                 target: 'http://admin.lenovouat.com/',

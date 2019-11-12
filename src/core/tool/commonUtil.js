@@ -1,6 +1,7 @@
 /**
  * Created by wupeng5 on 2018/2/1.
  */
+import Vue from "vue";
 let CommonUtil = {
     throwError:function(str){
         console.log(str);
@@ -419,6 +420,9 @@ let CommonUtil = {
             }
             return res;
         }
+    },
+    getVueInstance(){
+        return Vue.prototype;
     }
 }
 

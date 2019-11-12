@@ -60,7 +60,8 @@ let webpackConfig = {
         extensions: ['.vue', '.js', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            "@CoreUILib":path.resolve(__dirname,"./src/core/le-components")
+            "@CoreUILib":path.resolve(__dirname,"./src/core/le-components"),
+            "@util":path.resolve(__dirname,"./src/core/tool/commonUtil.js"),
         }
     },
 };

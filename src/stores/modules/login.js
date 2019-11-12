@@ -5,7 +5,7 @@ export default {
     namespaced: true,
     state:{
         entity: {
-            username:"", 
+            userid:"", 
             password:"", 
         }
     },
@@ -13,27 +13,27 @@ export default {
         setEntity(state,data){
             if(!data){
                 state.entity = {
-                    username:"",
+                    userid:"",
                     password:""
                 }
             }else{
                 state.entity = {
-                    username:data.username,
+                    userid:data.userid,
                     password:data.password
                 }
             }
         },
     },
     actions:{
-        doLogin(context,data){
+        doLogin(context,cb){
             Service.doLogin(context.state.entity,(res)=>{
-                data.cb && data.cb(res);
+                cb && cb(res);
             });
         },
-        doLogOut(context,data){
+        doLogOut(context,cb){
             Service.doLogOut((res)=>{
                 context.commit("setEntity",null);
-                data.cb && data.cb(res);
+                cb && cb(res);
             });
         }
     }

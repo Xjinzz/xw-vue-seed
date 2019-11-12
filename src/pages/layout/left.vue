@@ -4,6 +4,7 @@
         <div class='showNavBar'><i class='fa fa-play'></i></div>
         <div id='navBar'>
             <ul class='sideList'>
+                <li v-for="(item,idx) in menus" @click="go(item)" :key="idx">{{item.name}}</li>
             </ul> 
         </div>
     </nav>
@@ -22,6 +23,9 @@ export default {
     },
     methods:{
         ...mapActions(["getMenus"]),
+        go(item){
+            this.$router.push({path:item.path});
+        }
     },
     mounted(){
         this.getMenus(()=>{

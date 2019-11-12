@@ -14,10 +14,13 @@ export default {
         },
     },
     actions:{
-        getMenus(context,data){
+        getMenus(context,cb){
+            if(context.state.menus.length >0){
+                return;
+            }
             Service.getMenus((res)=>{
-                context.commit("setMenus",res.data);
-                data.cb && data.cb(res);
+                context.commit("setMenus",res);
+                cb && cb(res);
             });
         }
         

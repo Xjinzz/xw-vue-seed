@@ -10,12 +10,12 @@ const routers = [
         component:() => import('../pages/login/login.vue')
     },
     {
-        path: '/',
+        path: '/layout',
         name: 'layout',
         component:() => import('../pages/layout/layout.vue'),
         children:[
             {
-                path: '/test',
+                path: '/layout',
                 name: 'test',
                 component:() => import('../pages/test.vue')
             }

@@ -1,13 +1,15 @@
 
-import Vue from "vue";
-let login_url = "";
-let logOut_url = "";
+let login_url = "/login";
+let logOut_url = "/logout";
+
+import util from "@util";
+let _vue_instance = util.getVueInstance();
 
 export default{
     doLogin(data){
-        return Vue.ajax.postFetch(login_url,data);
+        return _vue_instance.ajax.postFetch(login_url,data);
     },
     doLogOut(){
-        return Vue.ajax.postFetch(logOut_url);
+        return _vue_instance.ajax.postFetch(logOut_url);
     }
 }
