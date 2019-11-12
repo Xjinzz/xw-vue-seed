@@ -62,6 +62,9 @@ let webpackConfig = {
             'vue$': 'vue/dist/vue.esm.js',
             "@CoreUILib":path.resolve(__dirname,"./src/core/le-components"),
             "@util":path.resolve(__dirname,"./src/core/tool/commonUtil.js"),
+            "@service":path.resolve(__dirname,"./src/services"),
+            "@store":path.resolve(__dirname,"./src/stores/modules"),
+            "@api":path.resolve(__dirname,"./src/api"),
         }
     },
 };
