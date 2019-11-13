@@ -1,5 +1,5 @@
 
-import Service from "../../services/login.js";
+import Service from "../../service/login.js";
 
 export default {
     namespaced: true,

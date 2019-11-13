@@ -1,5 +1,5 @@
 
-import Service from "../../services/menu.js";
+import Service from "../../service/menu.js";
 
 export default {
     namespaced: true,

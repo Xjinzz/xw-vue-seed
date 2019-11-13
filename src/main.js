@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from './routers/index.js';
-import store from "./stores/index.js";
+import router from './router/index.js';
+import store from "./store/index.js";
 
 import AjaxService from "./core/tool/fetch-install.js";
 import LeComponents from "@CoreUILib/le-components.min.js";
