@@ -7,17 +7,17 @@ const routers = [
     {
         path: '/',
         name: 'login',
-        component:() => import('../pages/login/login.vue')
+        component:() => import('@pages/login/login.vue')
     },
     {
         path: '/layout',
         name: 'layout',
-        component:() => import('../pages/layout/layout.vue'),
+        component:() => import('@pages/layout/layout.vue'),
         children:[
             {
                 path: '/layout',
                 name: 'test',
-                component:() => import('../pages/test.vue')
+                component:() => import('@pages/test.vue')
             }
         ]
     },

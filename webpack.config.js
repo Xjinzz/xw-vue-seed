@@ -64,7 +64,8 @@ let webpackConfig = {
             "@util":path.resolve(__dirname,"./src/core/tool/commonUtil.js"),
             "@service":path.resolve(__dirname,"./src/service"),
             "@store":path.resolve(__dirname,"./src/store"),
-            "@api":path.resolve(__dirname,"./src/api")
+            "@api":path.resolve(__dirname,"./src/api"),
+            "@pages":path.resolve(__dirname,"./src/pages")
         }
     },
 };
