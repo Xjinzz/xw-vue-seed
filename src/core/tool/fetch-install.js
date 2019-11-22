@@ -39,12 +39,10 @@ let param = function(obj) {
 export default {
     install:function(Vue){
         Vue.prototype.ajax = {
-            getFetch:function(url,proxy_key){
+            getFetch:function(url){
                 if(!url){
                     return;
                 }
-                proxy_key = proxy_key?proxy_key:"";
-                url = proxy_key + url;
                 let symbol = url.indexOf('?') == -1?"?":"&";
                 url = url + symbol + "ran="+Math.random();
                 let defer = Q.defer();
@@ -77,8 +75,6 @@ export default {
                 if(!url){
                     return;
                 }
-                proxy_key = proxy_key?proxy_key:"";
-                url = proxy_key + url;
                 let symbol = url.indexOf('?') == -1?"?":"&";
                 url = url + symbol + "ran="+Math.random();
                 let defer = Q.defer();
@@ -116,8 +112,6 @@ export default {
                 if(!url){
                     return;
                 }
-                proxy_key = proxy_key?proxy_key:"";
-                url = proxy_key + url;
                 let symbol = url.indexOf('?') == -1?"?":"&";
                 url = url + symbol + "ran="+Math.random();
                 
