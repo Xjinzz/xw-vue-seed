@@ -1,8 +1,6 @@
 
 import Q from "q";
 
-const proxy_key = window.location.href.indexOf('localhost') != -1?"/api/":"";
-
 let param = function(obj) {
     let query = '';
     let name, value, fullSubName, subName, subValue, innerObj, i;
@@ -41,10 +39,11 @@ let param = function(obj) {
 export default {
     install:function(Vue){
         Vue.prototype.ajax = {
-            getFetch:function(url,showLoading){
+            getFetch:function(url,proxy_key){
                 if(!url){
                     return;
                 }
+                proxy_key = proxy_key?proxy_key:"";
                 url = proxy_key + url;
                 let symbol = url.indexOf('?') == -1?"?":"&";
                 url = url + symbol + "ran="+Math.random();
@@ -74,10 +73,11 @@ export default {
                 });
                 return defer.promise;
             },
-            postFetch:function(url,data,showLoading){
+            postFetch:function(url,data,proxy_key){
                 if(!url){
                     return;
                 }
+                proxy_key = proxy_key?proxy_key:"";
                 url = proxy_key + url;
                 let symbol = url.indexOf('?') == -1?"?":"&";
                 url = url + symbol + "ran="+Math.random();
@@ -112,10 +112,11 @@ export default {
                 });
                 return defer.promise;
             },
-            uploadFetch:function(url,data){
+            uploadFetch:function(url,data,proxy_key){
                 if(!url){
                     return;
                 }
+                proxy_key = proxy_key?proxy_key:"";
                 url = proxy_key + url;
                 let symbol = url.indexOf('?') == -1?"?":"&";
                 url = url + symbol + "ran="+Math.random();
